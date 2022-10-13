@@ -140,11 +140,11 @@
     let giftCount = 0
     let score = 0
     let lastCheck = 12
-    let treasureLocation = 18
+    let treasureposition = 18
 
     function check(position) {
         image = document.getElementById(ids[position])
-        if(position == treasureLocation) {
+        if(position == treasureposition) {
             image.src = "gift.jpg"
         } else {
             image.src = "sorrowful.png"
@@ -159,22 +159,22 @@
     function help() {
         lastCheck_row = parseInt(lastCheck / 5)
         lastCheck_column = parseInt(lastCheck % 5)
-        treasureLocation_row = parseInt(treasureLocation / 5)
-        treasureLocation_column = parseInt(treasureLocation % 5)
+        treasureposition_row = parseInt(treasureposition / 5)
+        treasureposition_column = parseInt(treasureposition % 5)
         score += 2
         document.getElementById("score").innerHTML = "Score is " + score
-        if(lastCheck_row == treasureLocation_row) {
-            if(lastCheck_column < treasureLocation_column) {
+        if(lastCheck_row == treasureposition_row) {
+            if(lastCheck_column < treasureposition_column) {
                 document.getElementById("help").innerHTML = "Right"
-            } else if(lastCheck_column > treasureLocation_column) {
+            } else if(lastCheck_column > treasureposition_column) {
                 document.getElementById("help").innerHTML = "Left"
             } else {
                 document.getElementById("help").innerHTML = "Sorry, no help available"
             }
-        } else if(lastCheck_column == treasureLocation_column) {
-            if(lastCheck_row < treasureLocation_row) {
+        } else if(lastCheck_column == treasureposition_column) {
+            if(lastCheck_row < treasureposition_row) {
                 document.getElementById("help").innerHTML = "Down"
-            } else if(lastCheck_row > treasureLocation_row) {
+            } else if(lastCheck_row > treasureposition_row) {
                 document.getElementById("help").innerHTML = "Up"
             } else {
                 document.getElementById("help").innerHTML = "Sorry, no help available"
@@ -195,11 +195,11 @@
                 score = 0
                 document.getElementById("boxes").innerHTML = "Number of chests checked is zero"
                 document.getElementById("score").innerHTML = "Score is unknown"
-                for(let i = 0; i<=24; i++) 
+                for(let j = 0; j<=24; j++) 
                 {
-                    if(i != 12) 
+                    if(j != 12) 
                     {
-                        document.getElementById(ids[i]).src ="gift.jpg"
+                        document.getElementById(ids[j]).src ="gift.jpg"
                     }
                 }
             }
