@@ -105,6 +105,10 @@
         </div>
     </div>
 </div>
+
+<div class="container text-center">
+    <button class="btn btn-warning" type="submit" onclick="resetGame()">reset</button>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-sm">
@@ -179,6 +183,29 @@
             document.getElementById("help").innerHTML = "Sorry, no help available"
         }
     }
+
+    function resetGame()
+     {
+                treasureposition = Math.floor(Math.random() * 24)
+                while(treasureposition == 12) 
+                {
+                    treasureposition = Math.floor(Math.random() * 24)
+                }
+                chestCount = 0
+                score = 0
+                document.getElementById("boxes").innerHTML = "Number of chests checked is zero"
+                document.getElementById("score").innerHTML = "Score is unknown"
+                for(let i = 0; i<=24; i++) 
+                {
+                    if(i != 12) 
+                    {
+                        document.getElementById(ids[i]).src ="gift.jpg"
+                    }
+                }
+            }
 </script>
+
+
+</div>
 </body>
 </html>

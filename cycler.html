@@ -30,7 +30,7 @@
 </head>
 
 <body>
-    <!-- Part 7: Construct a “cycler” of items.  Items will be added and removed from the end.-->
+    
     <div class="container text-center">
         <div class="container-fluid p-5 bg-warning text-black text-center">
             <h1>Anaparthi Sai Ganesh builds a cycler</h1>
@@ -50,10 +50,10 @@
             <button class="btn btn-info" type="submit" onclick="makeNewDiv()">Add Value</button>
             <button class="btn btn-success" type="submit" onclick="get()">Get</button>
             <button class="btn btn-warning" type="submit" onclick="spin()">Spin</button>
+            <button class="btn btn-primary" type="submit" onclick="swap()">Swap</button>
         </div>
     </div>
     
-    <!-- Part 7: Construct a “cycler” of items.  Items will be added and removed from the end.-->
     <script>
         function makeNewDiv() {
             let element = document.createElement("div")
@@ -66,7 +66,7 @@
             container.appendChild(element)
         }
     </script>
-    <!-- Part 8: Implement Get and Spin.--> 
+ 
     <script>
         function get() {
             let cyclerItems = document.getElementsByClassName("cycler")
@@ -84,6 +84,24 @@
                 container.insertBefore(removedItem, container.firstChild)
             }
         }
+        function swap() 
+        {
+            let cyclerItems = document.getElementsByClassName("cycler")
+            
+            if(cyclerItems.length > 1) 
+            {
+                   
+                Randomitem1 = Math.floor(Math.random() * (cyclerItems.length-1) )
+                removedItem = cyclerItems[Randomitem1]
+                cyclerItems[Randomitem1].remove()
+
+                let container = document.getElementById("target")
+
+                container.insertBefore(removedItem, container.random)
+
+            }
+        }
+
     </script>
 </body>
 </html>	

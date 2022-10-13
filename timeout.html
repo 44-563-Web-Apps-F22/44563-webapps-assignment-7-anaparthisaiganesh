@@ -10,29 +10,23 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-  <h2>Timeout - Red in 3 seconds</h2>
-
+  <h2>Timeout - Yellow in 3 seconds</h2>
   <button type="button"
-  class="btn btn-primary"
+  class="btn btn-secondary"
   onclick="buttonPress2()">
   Click me change the color.</button>
-  
   <p id="target">I will become red </p>
-  
   <script> 
   function buttonPress1() {
     setTimeout(function(){
       document.getElementById('target').style.color = "red"
     }, 3000)
   }
-
   function buttonPress2() {
     setTimeout(()=>{
-      document.getElementById('target').style.color = "red"
+      document.getElementById('target').style.color = "yellow"
     }, 3000)
   }
   </script>
-
 </body>
 </html>
